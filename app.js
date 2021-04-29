@@ -34,12 +34,15 @@ app.get('/events', async (req, res, next) => {
 app.post('/events', async(req, res, next) => {
     try {
         const incomingData = req.body;
+        console.log(req.body);
         const foundUser = await Event.find({createdBy:incomingData.createdBy})
         if(foundUser) throw new Error('user already exists')
+       
         const events = await Event.create(incomingData)
         res.json({data:events})
     } catch (error) {
-        throw new Error(error)
+        const err =  new Error(error)
+        next(err);
     }
     
     
