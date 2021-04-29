@@ -1,7 +1,0 @@
-{
-    "env": {
-        "MONGO_USER" : "romit",
-        "MONGO_PASSWORD": "romit12",
-        "MONGO_DB": "events-react-dev"
-    }
-}
