@@ -4,25 +4,34 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
-    title: {
+    firstName: {
         type: String,
         required: true   
     },
-    description:{
+    lastName: {
         type: String,
-        required: true
+        required: true   
     },
-    price:{
-        type: Number,
+    number:{
+        type: String,
+        required:true
+    },
+    purpose:{
+        type: String,
         required: true
     },
     date:{
         type: Date,
-        required: true
+        required: true,
+        default: Date.now()
     },
     createdBy:{
         type: String,
         required: true
+    },
+    doctor:{
+        type:String,
+        required:true
     }
 });
 
